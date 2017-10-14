@@ -6,8 +6,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #f8c537;
+  background: #dbd5b5;
 }
+
 //Center Simon in the middle of the screen as well as the inner options
 @mixin center-middle($width, $height) {
   border-radius: 200px 200px 200px 200px;
@@ -24,14 +25,26 @@ body {
 #simon {
   @include center-middle(45%, 62%);
   border: 20px solid $border-color;
+  -webkit-box-shadow: 0px -1px 11px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px -1px 11px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px -1px 11px 1px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
 }
 //The middle block with the options
 #middle {
   @include center-middle(63%, 65%);
   border: 6px solid #000000;
+  background: #f8c537;
   h1 {
     padding-top: 11px;
     text-align: center;
+    font-family: "Fascinate Inline", cursive;
+  }
+
+  div {
+    div {
+      font-family: "Noto Serif", serif;
+    }
   }
 }
 //The counter which shows the player in which round he is
@@ -41,4 +54,9 @@ body {
   background: #000;
   color: #d91205;
   margin: 0 14 0 11;
+}
+
+#switch-row {
+  text-align: center;
+  margin-top: 23px;
 }

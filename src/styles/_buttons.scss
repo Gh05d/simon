@@ -1,138 +1,50 @@
-.simon-button-big {
-  border: 1px solid #000000;
-}
+@import "middle-buttons";
 
-#simon-button-start {
-  -moz-box-shadow: 3px 4px 0px 0px #8a2a21;
-  -webkit-box-shadow: 3px 4px 0px 0px #8a2a21;
-  box-shadow: 3px 4px 0px 0px #8a2a21;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.05, #c62d1f),
-    color-stop(1, #f24437)
-  );
-  background: -moz-linear-gradient(top, #c62d1f 5%, #f24437 100%);
-  background: -webkit-linear-gradient(top, #c62d1f 5%, #f24437 100%);
-  background: -o-linear-gradient(top, #c62d1f 5%, #f24437 100%);
-  background: -ms-linear-gradient(top, #c62d1f 5%, #f24437 100%);
-  background: linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(
-      startColorstr="#c62d1f",
-      endColorstr="#f24437",
-      GradientType=0
-    );
-  background-color: #c62d1f;
-  color: #c62d1f;
-  -moz-border-radius: 18px;
-  -webkit-border-radius: 18px;
-  border-radius: 18px;
-  border: 1px solid #d02718;
-  display: inline-block;
+$border-style: 5px solid #0c0811;
+
+@mixin simon-button-big($color) {
+  background: $color;
+  height: 190px;
+  width: 190px;
   cursor: pointer;
-  font-family: Arial;
-  font-size: 16px;
-  padding: 1px 9px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #810e05;
-  margin-left: 15px;
 }
 
-#simon-button-start:hover {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.05, #f24437),
-    color-stop(1, #c62d1f)
-  );
-  background: -moz-linear-gradient(top, #f24437 5%, #c62d1f 100%);
-  background: -webkit-linear-gradient(top, #f24437 5%, #c62d1f 100%);
-  background: -o-linear-gradient(top, #f24437 5%, #c62d1f 100%);
-  background: -ms-linear-gradient(top, #f24437 5%, #c62d1f 100%);
-  background: linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(
-      startColorstr="#f24437",
-      endColorstr="#c62d1f",
-      GradientType=0
-    );
-  background-color: #f24437;
+#simon-button-upper-left {
+  @include simon-button-big(#E00);
+  border-right: $border-style;
+  border-bottom: $border-style;
 }
 
-#simon-button-start:active {
-  position: relative;
-  top: 1px;
+#simon-button-upper-left:active {
+  background: lighten(#e00, 5%);
 }
 
-#simon-button-strict {
-  -moz-box-shadow: 3px 4px 0px 0px #698a21;
-  -webkit-box-shadow: 3px 4px 0px 0px #698a21;
-  box-shadow: 3px 4px 0px 0px #698a21;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.05, #ede207),
-    color-stop(1, #ede207)
-  );
-  background: -moz-linear-gradient(top, #ede207 5%, #ede207 100%);
-  background: -webkit-linear-gradient(top, #ede207 5%, #ede207 100%);
-  background: -o-linear-gradient(top, #ede207 5%, #ede207 100%);
-  background: -ms-linear-gradient(top, #ede207 5%, #ede207 100%);
-  background: linear-gradient(to bottom, #ede207 5%, #ede207 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(
-      startColorstr="#ede207",
-      endColorstr="#ede207",
-      GradientType=0
-    );
-  background-color: #ede207;
-  -moz-border-radius: 18px;
-  -webkit-border-radius: 18px;
-  border-radius: 18px;
-  border: 1px solid #cfcf19;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 16px;
-  padding: 1px 9px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #810e05;
+#simon-button-upper-right {
+  @include simon-button-big(#00d119);
+  border-left: $border-style;
+  border-bottom: $border-style;
 }
 
-#simon-button-strict:hover {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.05, #ede207),
-    color-stop(1, #ede207)
-  );
-  background: -moz-linear-gradient(top, #ede207 5%, #ede207 100%);
-  background: -webkit-linear-gradient(top, #ede207 5%, #ede207 100%);
-  background: -o-linear-gradient(top, #ede207 5%, #ede207 100%);
-  background: -ms-linear-gradient(top, #ede207 5%, #ede207 100%);
-  background: linear-gradient(to bottom, #ede207 5%, #ede207 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(
-      startColorstr="#ede207",
-      endColorstr="#ede207",
-      GradientType=0
-    );
-  background-color: #ede207;
+#simon-button-upper-right:active {
+  background: lighten(#00d119, 5%);
 }
 
-#simon-button-strict:active {
-  position: relative;
-  top: 1px;
+#simon-button-lower-left {
+  @include simon-button-big(#0017e6);
+  border-right: $border-style;
+  border-top: $border-style;
 }
 
-.simon-button-label {
-  text-align: center;
-  font-family: "Comic Sans MS";
+#simon-button-lower-left:active {
+  background: darken(#0017e6, 10%);
 }
 
-#simon-button-strict:active {
-  position: relative;
-  top: 1px;
+#simon-button-lower-right {
+  @include simon-button-big(#FCFC00);
+  border-left: $border-style;
+  border-top: $border-style;
+}
+
+#simon-button-lower-right:active {
+  background: darken(#fcfc00, 10%);
 }

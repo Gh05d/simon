@@ -1,0 +1,186 @@
+#simon-button-start {
+  -moz-box-shadow: 3px 4px 0px 0px #8a2a21;
+  -webkit-box-shadow: 3px 4px 0px 0px #8a2a21;
+  box-shadow: 3px 4px 0px 0px #8a2a21;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #c62d1f),
+    color-stop(1, #f24437)
+  );
+  background: -moz-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+  background: -webkit-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+  background: -o-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+  background: -ms-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+  background: linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#c62d1f",
+      endColorstr="#f24437",
+      GradientType=0
+    );
+  background-color: #c62d1f;
+  color: #c62d1f;
+  -moz-border-radius: 18px;
+  -webkit-border-radius: 18px;
+  border-radius: 18px;
+  border: 1px solid #d02718;
+  display: inline-block;
+  cursor: pointer;
+  font-family: Arial;
+  font-size: 16px;
+  padding: 1px 9px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #810e05;
+  margin-left: 15px;
+}
+
+#simon-button-start:hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #f24437),
+    color-stop(1, #c62d1f)
+  );
+  background: -moz-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+  background: -webkit-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+  background: -o-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+  background: -ms-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+  background: linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#f24437",
+      endColorstr="#c62d1f",
+      GradientType=0
+    );
+  background-color: #f24437;
+}
+
+#simon-button-start:active {
+  position: relative;
+  top: 1px;
+}
+
+#simon-button-strict {
+  -moz-box-shadow: 3px 4px 0px 0px #698a21;
+  -webkit-box-shadow: 3px 4px 0px 0px #698a21;
+  box-shadow: 3px 4px 0px 0px #698a21;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #ede207),
+    color-stop(1, #ede207)
+  );
+  background: -moz-linear-gradient(top, #ede207 5%, #ede207 100%);
+  background: -webkit-linear-gradient(top, #ede207 5%, #ede207 100%);
+  background: -o-linear-gradient(top, #ede207 5%, #ede207 100%);
+  background: -ms-linear-gradient(top, #ede207 5%, #ede207 100%);
+  background: linear-gradient(to bottom, #ede207 5%, #ede207 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#ede207",
+      endColorstr="#ede207",
+      GradientType=0
+    );
+  background-color: #ede207;
+  -moz-border-radius: 18px;
+  -webkit-border-radius: 18px;
+  border-radius: 18px;
+  border: 1px solid #cfcf19;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+  padding: 1px 9px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #810e05;
+}
+
+#simon-button-strict:hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #ede207),
+    color-stop(1, #ede207)
+  );
+  background: -moz-linear-gradient(top, #ede207 5%, #ede207 100%);
+  background: -webkit-linear-gradient(top, #ede207 5%, #ede207 100%);
+  background: -o-linear-gradient(top, #ede207 5%, #ede207 100%);
+  background: -ms-linear-gradient(top, #ede207 5%, #ede207 100%);
+  background: linear-gradient(to bottom, #ede207 5%, #ede207 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#ede207",
+      endColorstr="#ede207",
+      GradientType=0
+    );
+  background-color: #ede207;
+}
+
+#simon-button-strict:active {
+  position: relative;
+  top: 1px;
+}
+
+.simon-button-label {
+  text-align: center;
+  font-family: "Comic Sans MS";
+}
+
+#simon-button-strict:active {
+  position: relative;
+  top: 1px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 0 13px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0c0811;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #2196f3;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #0c0811;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #0c0811;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
