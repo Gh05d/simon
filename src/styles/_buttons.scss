@@ -10,41 +10,41 @@ $border-style: 5px solid #0c0811;
 }
 
 #simon-button-upper-left {
-  @include simon-button-big(#E00);
+  @include simon-button-big(#A00);
   border-right: $border-style;
   border-bottom: $border-style;
 }
 
 #simon-button-upper-left:active {
-  background: lighten(#e00, 5%);
+  background: #e00;
 }
 
 #simon-button-upper-right {
-  @include simon-button-big(#00d119);
+  @include simon-button-big(darken(#00d119, 30%));
   border-left: $border-style;
   border-bottom: $border-style;
 }
 
 #simon-button-upper-right:active {
-  background: lighten(#00d119, 5%);
+  background: #00d119;
 }
 
 #simon-button-lower-left {
-  @include simon-button-big(#0017e6);
+  @include simon-button-big(darken(#0017e6, 25%));
   border-right: $border-style;
   border-top: $border-style;
 }
 
 #simon-button-lower-left:active {
-  background: darken(#0017e6, 10%);
+  background: #0017e6;
 }
 
 #simon-button-lower-right {
-  @include simon-button-big(#FCFC00);
+  @include simon-button-big(#ACBC00);
   border-left: $border-style;
   border-top: $border-style;
 }
 
 #simon-button-lower-right:active {
-  background: darken(#fcfc00, 10%);
+  background: #fff000;
 }
