@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Options from "./Options";
 import _ from "lodash";
 import { soundBoard } from "./sounds";
+import { connect } from "react-redux";
 
 class App extends Component {
   constructor(props) {
@@ -24,7 +25,6 @@ class App extends Component {
         value={value}
         key={id}
         id={`simon-button-${id}`}
-        className="w3-half"
         style={this.state.active == value ? { background: color } : {}}
       />
     ));
@@ -90,33 +90,24 @@ class App extends Component {
   }
 
   render() {
-    const simonUpperButtons = [
-      { value: "upperLeft", id: "upper-left", color: "#e00" },
-      { value: "upperRight", id: "upper-right", color: "#00d119" }
-    ];
-
-    const simonLowerButtons = [
-      { value: "lowerLeft", id: "lower-left", color: "#0017e6" },
-      { value: "lowerRight", id: "lower-right", color: "#fff000" }
-    ];
-
     return (
       <div id="wrapper">
-        <div id="simon" className="w3-container" style={{ padding: "0px" }}>
-          <div className="w3-row">{this.renderButtons(simonUpperButtons)}</div>
-          <div id="middle">
-            <Options
-              count={this.state.counter}
-              strict={this.state.strict}
-              clickStrict={() => this.onClickStrict()}
-              clickStart={() => this.onClickStart()}
-            />
-          </div>
-          <div className="w3-row">{this.renderButtons(simonLowerButtons)}</div>
+        <div id="simon">
+          {this.renderButtons(this.props.buttons)}
+          <Options
+            count={this.state.counter}
+            strict={this.state.strict}
+            clickStrict={() => this.onClickStrict()}
+            clickStart={() => this.onClickStart()}
+          />
         </div>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps({ buttons }) {
+  return { buttons };
+}
+
+export default connect(mapStateToProps)(App);

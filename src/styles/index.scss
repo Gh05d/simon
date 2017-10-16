@@ -1,62 +1,69 @@
 @import "buttons";
-
 $border-color: #0c0811;
+$background-color: #dbd5b5;
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background: #dbd5b5;
-}
-
-//Center Simon in the middle of the screen as well as the inner options
-@mixin center-middle($width, $height) {
+@mixin round-borders($borderSize) {
   border-radius: 200px 200px 200px 200px;
   -moz-border-radius: 200px 200px 200px 200px;
   -webkit-border-radius: 200px 200px 200px 200px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: $width;
-  height: $height;
+  border: $borderSize solid $border-color;
 }
-//The whole container containing the game
+
+html {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background-image: url(https://adrian.moe/rchen/wp-content/gallery/communote/background_wood.jpg);
+  background-attachment: fixed;
+}
+
 #simon {
-  @include center-middle(45%, 62%);
-  border: 20px solid $border-color;
+  @include round-borders(15px);
   -webkit-box-shadow: 0px -1px 11px 1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px -1px 11px 1px rgba(0, 0, 0, 0.75);
   box-shadow: 0px -1px 11px 1px rgba(0, 0, 0, 0.75);
+  display: flex;
+  position: relative;
+  flex-flow: column wrap;
+  height: 405px;
+  width: 420px;
   overflow: hidden;
 }
-//The middle block with the options
-#middle {
-  @include center-middle(63%, 65%);
-  border: 6px solid #000000;
-  background: #69140e;
-  h1 {
-    padding-top: 11px;
-    text-align: center;
-    font-family: "Fascinate Inline", cursive;
-  }
 
-  div {
-    div {
-      font-family: "Noto Serif", serif;
-    }
+#middle {
+  @include round-borders(8px);
+  display: flex;
+  flex-flow: column nowrap;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  background: $background-color;
+  h1 {
+    text-align: center;
+    margin-bottom: 0;
   }
 }
+
+#control {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 //The counter which shows the player in which round he is
 #counter {
   text-align: center;
   border: 5px solid $border-color;
   background: #000;
   color: #d91205;
-  margin: 0 14 0 11;
 }
 
-#switch-row {
-  text-align: center;
-  margin-top: 23px;
+.invisible {
+  color: $background-color;
 }

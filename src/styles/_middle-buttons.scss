@@ -1,3 +1,9 @@
+#middle-buttons {
+  display: flex;
+  margin: 0 17px;
+  justify-content: space-between;
+}
+
 #simon-button-start {
   -moz-box-shadow: 3px 4px 0px 0px #8a2a21;
   -webkit-box-shadow: 3px 4px 0px 0px #8a2a21;
@@ -131,6 +137,11 @@
 #simon-button-strict:active {
   position: relative;
   top: 1px;
+}
+
+#switch-row {
+  display: flex;
+  margin: 0 0 15px 28px;
 }
 
 .switch {

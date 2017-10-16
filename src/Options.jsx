@@ -2,7 +2,7 @@ import React from "react";
 import OptionsMiddleButtons from "./OptionsMiddleButtons";
 
 export default props => (
-  <div className="w3-container">
+  <div id="middle">
     <h1>Simon</h1>
     <OptionsMiddleButtons
       count={props.count}
