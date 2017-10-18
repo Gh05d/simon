@@ -60,7 +60,7 @@ class App extends Component {
 
   showPressedButtons(btns) {
     btns.map((btn, i) => {
-      soundBoard[btn].play();
+      _.delay(() => soundBoard[btn].play(), (i + 1) * 950);
       _.delay(() => this.props.setActive(btn), (i + 1) * 950);
       //If the same button blinks, make sure that there is short pause between
       _.delay(() => this.props.setActive(""), (i + 1) * 1100);
