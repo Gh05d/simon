@@ -5,11 +5,15 @@ export default props => (
     <div>
       <div className="invisible">.</div>
       <div id="counter">
-        {props.power
-          ? props.count < 9 && props.count > 0 && props.count != "WIN"
-            ? `0${props.count}`
-            : props.count
-          : "."}
+        {props.power ? (
+          props.count < 9 && props.count > 0 && props.count != "WIN" ? (
+            `0${props.count}`
+          ) : (
+            props.count
+          )
+        ) : (
+          <span className="invisible">.</span>
+        )}
       </div>
       <div className="simon-button-label">Count</div>
     </div>
@@ -17,7 +21,7 @@ export default props => (
     <div className="simon-button-label">
       <div className="invisible">.</div>
       <button onClick={props.clickStart} id="simon-button-start">
-        .
+        <span className="invisible">.</span>
       </button>
       <div>Start</div>
     </div>
@@ -31,7 +35,7 @@ export default props => (
         )}
       </div>
       <button onClick={props.clickStrict} id="simon-button-strict">
-        .
+        <span className="invisible">.</span>
       </button>
       <div>Strict</div>
     </div>

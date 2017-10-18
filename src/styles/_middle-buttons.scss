@@ -5,6 +5,7 @@
 }
 
 #simon-button-start {
+  outline: none;
   -moz-box-shadow: 3px 4px 0px 0px #8a2a21;
   -webkit-box-shadow: 3px 4px 0px 0px #8a2a21;
   box-shadow: 3px 4px 0px 0px #8a2a21;
@@ -38,7 +39,6 @@
   padding: 1px 9px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #810e05;
-  margin-left: 15px;
 }
 
 #simon-button-start:hover {
@@ -68,6 +68,7 @@
 }
 
 #simon-button-strict {
+  outline: none;
   -moz-box-shadow: 3px 4px 0px 0px #698a21;
   -webkit-box-shadow: 3px 4px 0px 0px #698a21;
   box-shadow: 3px 4px 0px 0px #698a21;
@@ -141,7 +142,7 @@
 
 #switch-row {
   display: flex;
-  margin: 0 0 15px 28px;
+  margin: 10px 0 15px 28px;
 }
 
 .switch {

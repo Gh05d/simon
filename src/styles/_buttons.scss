@@ -1,43 +1,44 @@
 @import "middle-buttons";
 
-@mixin big-buttons($color, $top, $right, $bottom, $left) {
-  background: $color;
-  flex-basis: 50%;
-  padding: 0;
-  border-style: solid;
-  border-width: $top $right $bottom $left;
-  border-color: #0c0811;
-  cursor: pointer;
+@mixin big-buttons($color, $top, $right, $bottom, $left, $hover, $active) {
+  //Normal Styling
+  & {
+    background: $color;
+    flex-basis: 50%;
+    padding: 0;
+    border-style: solid;
+    border-width: $top $right $bottom $left;
+    border-color: #0c0811;
+    cursor: pointer;
+    outline: none;
+  }
+  //Pseudo Selector Styling
+  &:hover {
+    background: $hover;
+  }
+
+  &:active {
+    background: $active;
+  }
+
+  &:disabled {
+    background: grey;
+    cursor: not-allowed;
+  }
 }
 
 #simon-button-upper-left {
-  @include big-buttons(#FF7F50, 0, 8px, 8px, 0);
-}
-
-#simon-button-upper-left:hover {
-  background: red;
+  @include big-buttons(#FF7F50, 0, 8px, 8px, 0, darken(#ff7f50, 10%), red);
 }
 
 #simon-button-upper-right {
-  @include big-buttons(green, 0, 0, 8px, 8px);
-}
-
-#simon-button-upper-right:hover {
-  background: lighten(green, 30%);
+  @include big-buttons(green, 0, 0, 8px, 8px, lighten(green, 10%), #7cfc00);
 }
 
 #simon-button-lower-left {
-  @include big-buttons(#87cefa, 8px, 8px, 0, 0);
-}
-
-#simon-button-lower-left:hover {
-  background: blue;
+  @include big-buttons(#87cefa, 8px, 8px, 0, 0, darken(#87cefa, 20%), blue);
 }
 
 #simon-button-lower-right {
-  @include big-buttons(#FFA500, 8px, 0, 0, 8px);
-}
-
-#simon-button-lower-right:hover {
-  background: yellow;
+  @include big-buttons(darken(#FFA500, 10%), 8px, 0, 0, 8px, orange, yellow);
 }

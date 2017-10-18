@@ -5,6 +5,7 @@ const INITIALSTATE = {
   strict: false,
   count: "--",
   game: false,
+  clickable: false,
   moves: [],
   playerMoves: [],
   playerCount: 0,
@@ -16,7 +17,7 @@ export default function(state = INITIALSTATE, action) {
     case types.TOGGLE_POWER:
       if (state.power) {
         return INITIALSTATE;
-      } else return { ...state, power: true };
+      } else return { ...state, power: true, clickable: true };
 
     case types.STRICT_MODE:
       if (state.power) {
@@ -35,7 +36,8 @@ export default function(state = INITIALSTATE, action) {
       } else return INITIALSTATE;
 
     case types.RESET:
-      return { ...INITIALSTATE, power: true };
+      let saveStrict = state.strict;
+      return { ...INITIALSTATE, power: true, strict: saveStrict };
 
     case types.ADD_MOVE:
       return {
@@ -55,10 +57,16 @@ export default function(state = INITIALSTATE, action) {
       return { ...state, active: action.payload.active };
 
     case types.NULL_PLAYER_COUNT:
-      return { ...state, playerCount: 0 };
+      return { ...state, playerCount: 0, playerMoves: [] };
 
     case types.WIN:
       return { ...INITIALSTATE, count: "WIN", power: true };
+
+    case types.MISTAKE:
+      return { ...state, count: action.payload };
+
+    case types.CLICKABLE:
+      return { ...state, clickable: !state.clickable };
 
     default:
       return state;

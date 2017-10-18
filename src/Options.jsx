@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { togglePower, strictMode, startGame } from "./ButtonActions";
+import {
+  togglePower,
+  strictMode,
+  startGame,
+  toggleClickable
+} from "./ButtonActions";
 import { setActive } from "./GameActions";
 import OptionsMiddleButtons from "./OptionsMiddleButtons";
 import _ from "lodash";
@@ -10,7 +15,9 @@ class Options extends Component {
   onStart() {
     if (this.props.power) {
       this.props.startGame(_.sample(moves));
-      setTimeout(() => this.props.setActive(""), 1000);
+      _.delay(() => this.props.setActive(""), 500);
+      this.props.toggleClickable();
+      _.delay(() => this.props.toggleClickable(), 501);
     }
   }
 
@@ -45,6 +52,7 @@ function mapStateToProps({ game: { power, strict, count } }) {
 export default connect(mapStateToProps, {
   setActive,
   togglePower,
+  toggleClickable,
   strictMode,
   startGame
 })(Options);

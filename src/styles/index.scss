@@ -46,6 +46,8 @@ html {
   h1 {
     text-align: center;
     margin-bottom: 0;
+    line-height: 1;
+    padding-top: 5px;
   }
 }
 
@@ -65,5 +67,5 @@ html {
 }
 
 .invisible {
-  color: $background-color;
+  visibility: hidden;
 }

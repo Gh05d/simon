@@ -10,4 +10,9 @@ const sound3 = new Audio(
 const sound4 = new Audio(
   "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"
 );
-export const soundBoard = [sound1, sound2, sound3, sound4];
+export const soundBoard = {
+  upperLeft: sound1,
+  upperRight: sound2,
+  lowerLeft: sound3,
+  lowerRight: sound4
+};

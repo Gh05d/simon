@@ -48,3 +48,12 @@ export function nullPlayerCount() {
 export function win() {
   return { type: types.WIN };
 }
+
+export function mistake(msg) {
+  const action = {
+    type: types.MISTAKE,
+    payload: msg
+  };
+
+  return action;
+}

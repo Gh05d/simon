@@ -26,3 +26,7 @@ export function strictMode() {
 
   return action;
 }
+
+export function toggleClickable() {
+  return { type: types.CLICKABLE };
+}
