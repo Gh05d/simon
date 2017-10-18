@@ -10,14 +10,17 @@ import { setActive } from "./GameActions";
 import OptionsMiddleButtons from "./OptionsMiddleButtons";
 import _ from "lodash";
 import { moves } from "./constants";
+import { soundBoard } from "./sounds";
 
 class Options extends Component {
   onStart() {
     if (this.props.power) {
-      this.props.startGame(_.sample(moves));
+      let startMove = _.sample(moves);
+      this.props.startGame(startMove);
       _.delay(() => this.props.setActive(""), 500);
       this.props.toggleClickable();
       _.delay(() => this.props.toggleClickable(), 501);
+      soundBoard[startMove].play();
     }
   }
 
