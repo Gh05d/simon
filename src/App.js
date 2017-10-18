@@ -38,14 +38,16 @@ class App extends Component {
       //Check whether the Player clicked the right button
       if (move == clickedButton) {
         this.props.addPlayerMove(move);
-        //If not end the game and reset
+        //If not end the game and reset (in strict mode)
       } else if (move !== clickedButton && strict) {
         console.log("U lose!", strict);
         this.props.reset();
         _.delay(() => {
           this.props.startGame(_.sample(moves));
           setTimeout(() => this.props.setActive(""), 1000);
+          setTimeout(() => this.props.toggleClickable(""), 1000);
         }, 1000);
+        //Replay all Buttons if the player made a mistake
       } else if (move !== clickedButton && !strict) {
         this.props.toggleClickable();
         console.log("Mistake!", strict);
