@@ -32,6 +32,7 @@ class App extends Component {
   onButtonClick(move) {
     //Only make a move when a game is on
     if (this.props.game && this.props.clickable) {
+      soundBoard[move].play();
       let clickedButton = this.props.moves[this.props.playerCount];
       const { strict, mistake } = this.props;
       //Check whether the Player clicked the right button
