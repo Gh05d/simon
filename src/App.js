@@ -35,22 +35,28 @@ class App extends Component {
       soundBoard[move].play();
       let clickedButton = this.props.moves[this.props.playerCount];
       const { strict, mistake } = this.props;
+
       //Check whether the Player clicked the right button
       if (move == clickedButton) {
         this.props.addPlayerMove(move);
+
         //If not end the game and reset (in strict mode)
       } else if (move !== clickedButton && strict) {
         console.log("U lose!", strict);
         this.props.reset();
         _.delay(() => {
           this.props.startGame(_.sample(moves));
-          setTimeout(() => this.props.setActive(""), 1000);
-          setTimeout(() => this.props.toggleClickable(""), 1000);
+          _.delay(() => {
+            this.props.setActive("");
+            this.props.toggleClickable("");
+          }, 1000);
         }, 1000);
+
         //Replay all Buttons if the player made a mistake
       } else if (move !== clickedButton && !strict) {
         this.props.toggleClickable();
         console.log("Mistake!", strict);
+
         //Show the user an error and after that continue counting
         let saveCount = this.props.count;
         mistake("!!");
@@ -62,14 +68,20 @@ class App extends Component {
   }
 
   showPressedButtons(btns) {
-    btns.map((btn, i) => {
-      _.delay(() => soundBoard[btn].play(), (i + 1) * 950);
-      _.delay(() => this.props.setActive(btn), (i + 1) * 950);
-      //If the same button blinks, make sure that there is short pause between
-      _.delay(() => this.props.setActive(""), (i + 1) * 1100);
-    });
-    //Make the buttons clickable again
-    _.delay(() => this.props.toggleClickable(), btns.length * 1200);
+    let i = 0;
+    let interval = setInterval(() => {
+      soundBoard[btns[i]].play();
+      this.props.setActive(btns[i]);
+      _.delay(() => this.props.setActive(""), 800);
+      i++;
+      if (i >= btns.length) {
+        clearInterval(interval);
+        _.delay(() => {
+          this.props.setActive("");
+          this.props.toggleClickable();
+        }, 1100);
+      }
+    }, 1100);
   }
 
   aiPlay() {
@@ -77,14 +89,17 @@ class App extends Component {
     if (this.props.game == "WIN") {
       return console.log("You have won! Congrats");
     }
+
     //Prevent the player from being able to press buttons
     this.props.toggleClickable();
 
     let move = _.sample(moves);
     let allMoves = this.props.moves;
+
     //Add a random button press to the moves array
     this.props.addMove(move);
     allMoves.push(move);
+
     //Show the Player all the buttons which were pressed
     this.showPressedButtons(allMoves);
   }
